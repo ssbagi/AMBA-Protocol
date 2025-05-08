@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/41f28aba-8b04-40ba-929b-59adc2292e57)![image](https://github.com/user-attachments/assets/6ea187c3-63cb-4429-b956-145dc79f2f51)## AXI4
+# AXI4
 
 The Widely accepted AMBA AXI Protocol. 
 Link : 
