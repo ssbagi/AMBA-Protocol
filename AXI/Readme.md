@@ -287,6 +287,19 @@ Few Rules on the transaction length :
 
 ![image](https://github.com/user-attachments/assets/1ae748f2-8513-42e0-8a44-a1e923ad86da)
 
+## Why 4KB as boundary?
+
+Enforcement in AXI4
+- AXI4 mandates that transactions must not cross a 4KB boundary.
+- If a burst reaches the boundary, a new transaction must be initiated.
+
+![image](https://github.com/user-attachments/assets/d1b99739-2a1f-47e7-a4fa-c0aeddabc702)
+
+![image](https://github.com/user-attachments/assets/8e982353-39bf-489f-ac36-b5c07c38bd7d)
+
+![image](https://github.com/user-attachments/assets/adf74c25-2b1f-4110-9d02-c9e20dad376a)
+
+
 ## Protection level support
 - If a transaction does not have the correct level of protection, a memory controller could refuse read or write access by using these signals.
 - AWPROT and ARPROT, that can protect against illegal transactions downstream in the system.
