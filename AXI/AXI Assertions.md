@@ -26,34 +26,22 @@ Note: The first two assertions in almost all AW Channel signals are the same. Th
 - AWBURST remains stable when AWVALID = 1 and AWREADY = 0.
 - AWBURST must be in a known state when AWVALID = 1.
 - AWBURST should not have 2’b11 when AWVALID = 1.
-#### AWLOCK
-- AWLOCK remains stable when AWVALID = 1 and AWREADY = 0.
-- AWLOCK must be in a known state when AWVALID = 1.
-#### AWCACHE
-- AWCACHE remains stable when AWVALID = 1 and AWREADY = 0.
-- If AWVALID = 1 → AWCACHE[1] = 0 (Cacheable or Modifiable bit), then AWCACHE[3:2] must be 0.
-- AWCACHE must be in a known state when AWVALID = 1.
+
+AWLOCK  |  AWCACHE  | AWUSER  | AWQOS  | AWREGION  | AWUSER : Not implemented in VIP
+
 #### AWVALID
 - AXI4 supports asynchronous reset assertion and synchronous deassertion.
 - AWVALID = 0 for the first cycle when ARESETn = 1.
 - AWVALID = 1 must remain HIGH until AWREADY = 1.
 - AWVALID cannot be in X state when ARESETn = 1, except in Reset mode.
+
 #### AWREADY
 - AWREADY must be asserted within MAXWAITS cycles of AWVALID being asserted.
-#### AWUSER
-- AWUSER remains stable when AWVALID = 1 and AWREADY = 0.
-- AWUSER must be in a known state when AWVALID = 1.
-#### AWQOS
-- AWQOS remains stable when AWVALID = 1 and AWREADY = 0.
-- AWQOS must be in a known state when AWVALID = 1.
-#### AWREGION
-- AWREGION remains stable when AWVALID = 1 and AWREADY = 0.
-- AWREGION must be in a known state when AWVALID = 1.
+
 #### AWLEN
 - If BURST = 2’b00 (FIXED), cannot exceed 16 beats.
 - Exclusive transactions cannot have a length greater than 16 beats.
-#### AWUSER
-- Stable when AWUSER_WIDTH = 0.
+
 #### AWID
 - Stable when ID_WIDTH = 0.
 
