@@ -8,7 +8,7 @@ Understanding the APB Protocol referred the ARM Document and ARM SoC Book. Refer
 # APB Protocol 
 - Usage for **low throughput** completer devices.
 - The peripherals and register based interface.
-- Used for **single-beat transfers** and completer-side backpressure.
+- Used for **single-beat transfers** and completer-side backpressure. The Penable from Master and Pready from slave these act like backpressure signals to go into wait state. 
 - The low-performance, low-throughput and low-power consumption. 
 - The completers handle a **single in-flight transfer one at time**, with **no overlap between transfers i.e., no pipelinin**g.
 - Every transfer is handled over multiple clock cycles and bus throughput reduced accordingly. 
