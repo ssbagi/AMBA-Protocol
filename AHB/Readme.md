@@ -154,7 +154,43 @@ The back-to-back single-beat transfers are unstallable on the manager side and h
 ![image](https://github.com/user-attachments/assets/b6def7c4-a85e-4baf-bf8e-e9a4fb64d46e)
 
 From the above figure following conclusion can be made : 
+- At time T3 Master decides to stall the transaction so, HTRANS = 2'b01 = BUSY. Holds its control and data signals. Since its read transaction going on so, HRDATA and HREADY is kept constant.
+- At time T5 Slave decides to stall the transaction so, HREADY = 0. We observe the HRDATA is Unknown or stalling the data phase. The Master maintains its control/data signals until T7 when HREADY is reasserted. 
 
+## Multi Manager System
+The Real systems often contain multiple managers in a configuration in which several of them need access to a common subset of subordinates. 
+This type of interconnect scheme is called multi-layer AHB and its simplest form is represented in below figure by a hypothetical two-manager system in which we’ve identified the independent layers in red and blue.
+
+![image](https://github.com/user-attachments/assets/4a5b4a89-52d8-44b6-940f-d64af8a8a87b)
+
+
+## Locked Transfer
+- The common scenario of two CPUs trying to use a software lock in a high-level program to provide mutually exclusive access to some shared resource. 
+- A software lock is basically a number stored at a shared address in memory whose value identifies its current owner.
+- If a thread reads a lock and sees it is free, there is nothing to prevent another thread from overwriting the lock with its identifier before the first thread’s write has managed to do so.
+- A data race can be prevented by ensuring that the read-modify-write operation on the lock resource is performed as a single indivisible step such that no thread can read the lock without witnessing any other thread’s write of it.
+
+- A manager can inform a subordinate that a sequence of transfers is indivisible by asserting the HMASTLOCK signal in its address phase.
+- A subordinate can then ensure that no other operations are performed between the first and last transfers of the critical sequence, such that the whole sequence appears as a single operation. 
+
+![image](https://github.com/user-attachments/assets/18c9261a-7a25-4f5f-9e47-ce625ddeb34c)
+
+##  Transfer Response
+The AHB-Lite specification does not provide a mechanism for managers to cancel a transfer once it has started, and subordinates are therefore the only entities on the bus that can control the progression of an active bus operation. 
+![image](https://github.com/user-attachments/assets/df96789e-64e3-4419-ace2-d9e0e0bd1c1a)
+
+An example below where the asserting of Error during write to read only memory.
+![image](https://github.com/user-attachments/assets/3604709d-2080-421f-a370-73dcc239473c)
+
+## Protection Control
+The dedicated tagging mechanism by which data can be labeled appropriately while in transit through the interconnect. 
+
+![image](https://github.com/user-attachments/assets/77de8db1-abc3-4e54-8399-3cb52bf94042)
+
+
+## Conclusion
+The AHB-Lite protocol designed with high data throughput in mind, throughput that is achieved by a combination of wide data buses and a pipelined communication scheme that enables high bus utilization.
+To enable variable-width data transfers, flow control, the ability to inform subordinates of an upcoming group of related transfers, atomic bus operations, data protection flags, and transfer status responses.
 
 
 
