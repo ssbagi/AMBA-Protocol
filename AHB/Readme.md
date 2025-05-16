@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/4b270bda-28ec-4f5f-a86c-e23faf8ae188)# AHB
+# AHB
 
 The Widely accepted AMBA AHB Protocol. The content is taken from the ARM Documentation.
 
