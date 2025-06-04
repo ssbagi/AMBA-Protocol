@@ -247,7 +247,12 @@ The Active Transaction is known as Outstanding Transactions (OT).
 - RVALID cannot be asserted until ARADDR has been transferred.
   - The slave cannot transfer any read data without it seeing the address first. This is because the slave cannot send data back to the master if it does not know the address that the data will be read from.
 - WVALID can assert before AWVALID.
-  - A master could use the Write Data channel to send data to the slave, before communicating the address where the slave should write these data.  
+  - A master could use the Write Data channel to send data to the slave, before communicating the address where the slave should write these data.
+
+## Arrow Dependency 
+- Single headed arrow : Destination signal need not wait for source signal assertion.
+- Double headed arrow : Destination signal has  to  wait for source signal assertion.
+  
 
 ## Write Transaction Dependencies
 ![image](https://github.com/user-attachments/assets/7f582be6-d616-449d-b9d1-bf12c7c5829b)
