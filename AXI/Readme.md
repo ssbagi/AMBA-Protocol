@@ -460,14 +460,18 @@ AxLOCK
 
 $$
 \text{BW} = (Number of bits per unit) * (freq)
+$$
 
 ### AXI BW Example
 AXI with 1GHz and 64bit data transfer. 
 
+$$
 \text{Theoretical Bandwidth} = (Number of bits per unit) * (freq) = 64 * 1\text{GHz} = 64\text{Gbps}
+$$
 
 So, now total cycle is 19, and 16 cycles are used for data transfer. Now Achieable Bandwidth is different.
 
+$$
 \text{Achievable Bandwidth} = (Number of bits per unit) * (freq) * \left( \frac{16}{19} \right) = 64\,\text{bits} \times 1\,\text{GHz} \times \left( \frac{16}{19} \right) \approx 53.89\text{Gbps}
 $$
 
