@@ -456,43 +456,22 @@ AxLOCK
 
 
 ## AXI Bandwidth
-
 **Bandwidth (BW)** is calculated as:
-\[
-\text{BW} = N \times f
-\]
-
-Where:  
-- \( \text{BW} \) = Bandwidth  
-- \( N \) = Number of bits per unit (e.g., per sample or symbol)  
-- \( f \) = Frequency (e.g., sampling rate or symbol rate in Hz)
+$$
+\text{BW} = (Number of bits per unit) * (freq)
+$$
 
 ### AXI BW Example
 AXI with 1GHz and 64bit data transfer. 
-
-\[
-\text{Theoretical Bandwidth} = N \times f = 64 \times 1\,\text{GHz} = 64\,\text{Gbps}
-\]
-
-Where:  
-- \( N = 64 \) bits per unit  
-- \( f = 1\,\text{GHz} \) (frequency)  
-- Result: \( 64\,\text{Gbps} \) (Gigabits per second)
+$$
+\text{Theoretical Bandwidth} = (Number of bits per unit) * (freq) = 64 * 1\text{GHz} = 64\text{Gbps}
+$$
 
 So, now total cycle is 19, and 16 cycles are used for data transfer. Now Achieable Bandwidth is different.
 
-\[
-\text{Achievable Bandwidth} = N \times f \times \left( \frac{16}{19} \right) = 64\,\text{bits} \times 1\,\text{GHz} \times \left( \frac{16}{19} \right) \approx 53.89\,\text{Gbps}
-\]
-
-Where:  
-- \( N = 64 \) bits per unit  
-- \( f = 1\,\text{GHz} \) (frequency)  
-- \( \frac{16}{19} \) = Efficiency factor (e.g., encoding overhead)  
-- Result: \( \approx 53.89\,\text{Gbps} \)
-
- 
-
+$$
+\text{Achievable Bandwidth} = (Number of bits per unit) * (freq) * \left( \frac{16}{19} \right) = 64\,\text{bits} \times 1\,\text{GHz} \times \left( \frac{16}{19} \right) \approx 53.89\,\text{Gbps}
+$$
 
 
 
